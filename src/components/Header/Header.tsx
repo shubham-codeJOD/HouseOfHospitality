@@ -6,7 +6,7 @@ export default function Header() {
     <nav className="custom-navbar navbar navbar-expand-lg navbar-light">
       <div className="container custom-navbar-inner">
         <img src="#" alt="Logo" className="navbar-logo" />
-        <Link className="navbar-brand fs-1 fw-high ms-2" to="/">Humans Of Hospitality</Link>
+        <Link className="navbar-brand ms-2" to="/">Humans Of Hospitality</Link>
 
         <button
           className="navbar-toggler"
