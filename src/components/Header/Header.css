@@ -1,0 +1,65 @@
+.custom-navbar {
+  background-color: #fdfbf4;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.custom-navbar-inner {
+  height: 80px; /* Set navbar height to 110px */
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically center items */
+}
+
+.navbar-brand {
+  font-size: 1.9rem;
+  font-weight: 500;
+  color: #222;
+  text-decoration: none;
+}
+
+.navbar-brand:hover {
+  color: #444;
+}
+
+.navbar-nav {
+  display: flex; /* Align nav items horizontally */
+  gap: 2rem; /* Adjust gap between links */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center; /* Ensures nav items are vertically centered */
+}
+
+.nav-link {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 5px 0;
+  text-decoration: none; /* Remove underline on normal state */
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #007bff;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%; /* Draw the underline on hover */
+}
+
+.nav-link:hover {
+  color: #007bff; /* Optional: Change text color when hovered */
+}

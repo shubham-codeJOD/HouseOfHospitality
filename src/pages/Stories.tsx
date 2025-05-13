@@ -1,34 +1,36 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import StoryCard from '../components/StoryCard';
-import StoryModal from '../components/StoryModal';
+import { customSlugify } from '../utils/slugify';
 
-const dummyStories = [
-  { title: 'Aarav – From Dishwasher to Sous Chef', content: 'Aarav began as a dishwasher in a bustling Mumbai hotel...', image: 'https://via.placeholder.com/350x200?text=Chef+Story' },
-  { title: 'Meena – The Smiling Housekeeper', content: 'Working two jobs, Meena never let go of her cheerful spirit...', image: 'https://via.placeholder.com/350x200?text=Housekeeper+Story' },
-  { title: 'Ravi – The Night Manager', content: 'Ravi handles late-night chaos in a city hotel...', image: 'https://via.placeholder.com/350x200?text=Night+Manager+Story' },
-];
+interface Story {
+  title: string;
+  content: string;
+  image: string;
+}
 
 export default function Stories() {
-  const [selectedStory, setSelectedStory] = useState<typeof dummyStories[0] | null>(null);
-
+    const [stories, setStories] = useState<Story[]>([]); 
+  
+    useEffect(() => {
+      fetch('https://raw.githubusercontent.com/shubham-codeJOD/hoh-data/main/hoh-stories.json')
+        .then((res) => res.json())
+        .then((data) => setStories(data))
+        .catch((err) => console.error("Failed to load stories", err));
+    }, []);
   return (
     <div className="container my-5">
       <h2 className="mb-4">Stories</h2>
       <div className="row">
-        {dummyStories.map((story, idx) => (
+        {stories.map((story, idx) => (
           <StoryCard
             key={idx}
             title={story.title}
             content={story.content}
             image={story.image}
-            onClick={() => setSelectedStory(story)}
+            readMoreLink={`/stories/${customSlugify(story.title)}`} // Use the customSlugify function
           />
         ))}
       </div>
-
-      {selectedStory && (
-        <StoryModal story={selectedStory} onClose={() => setSelectedStory(null)} />
-      )}
     </div>
   );
 }

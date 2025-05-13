@@ -1,50 +1,52 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import StoryCard from '../components/StoryCard';
-import TestimonialCarousel from '../components/TestimonialCarousel';
-import StoryModal from '../components/StoryModal';
+import ContactForm from '../components/ContactForm';
+import Hero from '../components/Hero/Hero';
+import { customSlugify } from '../utils/slugify';
 
-// Sample stories with images
-const stories = [
-  {
-    title: "Aarav – From Dishwasher to Sous Chef",
-    content: "Aarav’s journey is a testament to hard work and dedication.",
-    image: "https://via.placeholder.com/350x200?text=Story+1",
-  },
-  {
-    title: "Meena – The Smiling Housekeeper",
-    content: "Meena’s smile is a source of comfort to every guest she meets.",
-    image: "https://via.placeholder.com/350x200?text=Story+2",
-  },
-  {
-    title: "Ravi – The Night Manager",
-    content: "Ravi ensures guests feel safe and welcome, no matter the hour.",
-    image: "https://via.placeholder.com/350x200?text=Story+3",
-  },
-];
+interface Story {
+  title: string;
+  content: string;
+  image: string;
+}
 
-// Sample testimonials
-const testimonials = [
-  { name: "Raj", content: "This platform gave me a sense of pride in my work." },
-  { name: "Priya", content: "Finally someone is listening to us." },
-  { name: "Aditya", content: "Reading these stories reminds me why I chose this field." },
-];
+interface Testimonial {
+  name: string;
+  content: string;
+}
 
 export default function Home() {
-  const [selectedStory, setSelectedStory] = useState<typeof stories[0] | null>(null);
+  const [stories, setStories] = useState<Story[]>([]);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+
+
+  useEffect(() => {
+    fetch('https://raw.githubusercontent.com/shubham-codeJOD/hoh-data/main/hoh-feat-stories.json')
+      .then((res) => res.json())
+      .then((data) => setStories(data))
+      .catch((err) => console.error("Failed to load stories", err));
+  }, []);
+
+    useEffect(() => {
+    fetch('https://raw.githubusercontent.com/shubham-codeJOD/hoh-data/main/hoh-testimonials.json')
+      .then((res) => res.json())
+      .then((data) => setTestimonials(data))
+      .catch((err) => console.error("Failed to load testimonials", err));
+  }, []);
+  
   return (
     <div>
       {/* Hero Section */}
-      <section className="hero bg-primary text-white text-center py-5">
-        <div className="container">
-          <h1>Welcome to House of Hospitality</h1>
-          <p>Discover the unsung heroes of the hospitality industry.</p>
-          <a href="/stories" className="btn btn-light btn-lg">Explore Stories</a>
-        </div>
-      </section>
+      <Hero
+        imageUrl="https://content.app-sources.com/s/810084476556330001/uploads/Images/2_3-7351171.jpg" // Replace with actual image URL
+        title="The Journey of John Doe"
+        content="Discover how John Doe made a difference in the hospitality industry with his dedication and passion."
+        link="/stories/john-doe" // Link to the full story
+      />
 
       {/* Stories Section */}
       <section className="container my-5">
-        <h2>Featured Stories</h2>
+        <h2 className="text-center mb-5">Featured Stories</h2>
         <div className="row">
           {stories.map((story, index) => (
             <StoryCard
@@ -52,33 +54,35 @@ export default function Home() {
               title={story.title}
               content={story.content}
               image={story.image}
-              onClick={() => setSelectedStory(story)}
+              readMoreLink={`/stories/${customSlugify(story.title)}`} // Use the customSlugify function
             />
           ))}
         </div>
       </section>
 
-      {/* Modal for selected story */}
-      {selectedStory && (
-        <StoryModal story={selectedStory} onClose={() => setSelectedStory(null)} />
-      )}
-
-      {/* Testimonials Carousel */}
-      <section className="bg-dark text-white py-5">
+      {/* Testimonials Section */}
+      <section className="bg-light py-5">
         <div className="container">
-          <h2 className="mb-4 text-center">What People Say</h2>
-          <TestimonialCarousel testimonials={testimonials} />
+          <h2 className="text-center mb-5">What People Say</h2>
+          <div className="row">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="col-12 col-sm-6 col-lg-4 mb-4">
+                <div className="testimonial-card p-4 shadow-lg rounded">
+                  <p className="text-muted mb-2">"{testimonial.content}"</p>
+                  <p className="font-weight-bold text-right">– {testimonial.name}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-
-
-      {/* Call to Action Section */}
-      <section className="cta bg-dark text-white text-center py-5">
+      {/* Contact Section */}
+      <section className="bg-light text-center py-5">
         <div className="container">
-          <h2>Join Us In Celebrating Hospitality Workers</h2>
-          <p>Your story matters to us. Share your journey today!</p>
-          <a href="/contact" className="btn btn-light btn-lg">Submit Your Story</a>
+          <h2 className="display-4 mb-4">Join Us In Celebrating Hospitality Workers</h2>
+          <p className="lead mb-4">Your story matters to us. Share your journey today!</p>
+          <ContactForm />
         </div>
       </section>
     </div>

@@ -1,0 +1,65 @@
+.hero {
+  position: relative;
+  height: 600px; /* Adjust height according to the image aspect ratio */
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.hero-overlay {
+  width: 100%;
+  max-width: 1200px;
+  padding-left: 5%;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.hero-card {
+  background-color: rgba(0, 0, 0, 0.17);  /* Transparent black background */
+  color: #222;                            /* Brand text color */
+  width: 27rem;
+  padding: 1rem;
+  margin-left: 3rem;
+  border-radius: 15px;
+  border: none;                          /* Remove border for a clean look */
+  box-shadow: none;                      /* Remove 3D effect */
+}
+
+.hero-title {
+  font-size: 1.8rem;                     /* Increase font size */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #ffcc00;                        /* Professional yellow for title */
+}
+
+.hero-content-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #fff;                           /* Black color for content */
+}
+
+.hero-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600 !important;
+  font-size: 1rem;
+  background-color: #ffcc00 !important;
+  border: none;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .hero-card {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+  }
+}
