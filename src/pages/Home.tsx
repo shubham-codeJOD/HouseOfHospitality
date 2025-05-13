@@ -63,7 +63,7 @@ export default function Home() {
       {/* Testimonials Section */}
       <section className="bg-light py-5">
         <div className="container">
-          <h2 className="text-center mb-5">What People Say</h2>
+          <h2 className="text-center mb-5">What people are saying</h2>
           <div className="row">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="col-12 col-sm-6 col-lg-4 mb-4">
