@@ -60,6 +60,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Mission and Vision Section */}
+<section className="container my-5">
+  <div className="row">
+    <div className="col-md-6 mb-4">
+      <h2 className="fw-bold">Our Mission</h2>
+      <p>
+        To humanise, educate, and elevate hospitality by amplifying real voices — not curated narratives. 
+        We’re here to shift perceptions, break stereotypes, and honour every role — from dishwashers to directors — 
+        with the depth, empathy, and truth they deserve.
+      </p>
+    </div>
+    <div className="col-md-6 mb-4">
+      <h2 className="fw-bold">Our Vision</h2>
+      <p>
+        A world where the people behind the service — waiters, chefs, cleaners, delivery riders — are seen for who 
+        they are, not just what they do. We aim to transform public perception and build a global culture of hospitality 
+        storytelling and empathy.
+      </p>
+    </div>
+  </div>
+</section>
+
       {/* Testimonials Section */}
       <section className="bg-light py-5">
         <div className="container">
