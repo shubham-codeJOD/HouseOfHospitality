@@ -16,6 +16,7 @@
   font-weight: 500;
   color: #222;
   text-decoration: none;
+  color: #1f3f6e !important;
 }
 
 .navbar-brand:hover {
@@ -62,4 +63,26 @@
 
 .nav-link:hover {
   color: #007bff; /* Optional: Change text color when hovered */
+}
+
+@media (max-width: 991.98px) { /* Bootstrap lg breakpoint */
+  .navbar-collapse {
+    background-color: #fdfbf4; /* Match navbar */
+    padding: 1rem;
+  }
+
+  .navbar-nav {
+    flex-direction: column; /* Stack items vertically on mobile */
+    gap: 1rem; /* Space between stacked links */
+    align-items: flex-start; /* Left align items */
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 0.5rem 0;
+  }
 }
