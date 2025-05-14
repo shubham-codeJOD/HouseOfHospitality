@@ -11,6 +11,12 @@
   align-items: center; /* Vertically center items */
 }
 
+.navbar-logo {
+  max-height: 90px;
+  width: auto;
+  height: auto;
+}
+
 .navbar-brand {
   font-size: 2.4rem !important;
   font-weight: bold;

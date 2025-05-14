@@ -3,6 +3,7 @@ import StoryCard from '../components/StoryCard';
 import ContactForm from '../components/ContactForm';
 import Hero from '../components/Hero/Hero';
 import { customSlugify } from '../utils/slugify';
+import FullWidthCarousel from '../components/FullWidthCarousel/FullWidthCarousel';
 
 interface Story {
   title: string;
@@ -129,6 +130,8 @@ export default function Home() {
   </div>
 </section>
 
+  {/* Image Carousel Section */}
+  <FullWidthCarousel />
 
 
       {/* Contact Section */}

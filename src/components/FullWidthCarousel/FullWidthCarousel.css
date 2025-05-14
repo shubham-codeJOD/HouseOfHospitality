@@ -1,0 +1,35 @@
+.carousel-wrapper {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  height: 650px; /* Increased height */
+}
+
+.carousel-img {
+  width: 100%;
+  height: 650px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Next/Prev Button Styling */
+.carousel-control-prev.no-overlay,
+.carousel-control-next.no-overlay {
+  background: rgba(0, 0, 0, 0.05) !important; /* Very light black transparent background */
+  opacity: 0.3 !important; /* Slightly visible */
+  transition: opacity 0.3s ease;
+}
+
+.carousel-control-prev.no-overlay:hover,
+.carousel-control-next.no-overlay:hover {
+  opacity: 0.6 !important; /* Slightly more visible on hover */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}

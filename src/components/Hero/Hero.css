@@ -18,7 +18,7 @@
 }
 
 .hero-card {
-  background-color: rgba(0, 0, 0, 0.17);  /* Transparent black background */
+  background-color: rgba(0, 0, 0, 0.51);  /* Transparent black background */
   color: #222;                            /* Brand text color */
   width: 27rem;
   padding: 1rem;
@@ -32,7 +32,7 @@
   font-size: 1.8rem;                     /* Increase font size */
   font-weight: 700;
   margin-bottom: 0.5rem;
-  color: #ffcc00;                        /* Professional yellow for title */
+  color: #fff;                        /* Professional yellow for title */
 }
 
 .hero-content-text {
@@ -43,13 +43,12 @@
 
 .hero-btn {
   padding: 0.75rem 1.5rem;
-  border-radius: 25px;
-  font-weight: 600 !important;
   font-size: 1rem;
-  background-color: #ffcc00 !important;
-  border: none;
+  background-color: #1f3f6e !important;
   text-transform: uppercase;
   transition: background-color 0.3s ease;
+  color: white !important;              /* Text color */
+  text-transform: none;      /* Preserve original casing */
 }
 
 @media (max-width: 768px) {
