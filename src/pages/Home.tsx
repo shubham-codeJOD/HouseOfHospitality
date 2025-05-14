@@ -99,6 +99,38 @@ export default function Home() {
         </div>
       </section>
 
+     {/* Our Oath Section */}
+<section className="container my-5">
+  <div className="row justify-content-center">
+    <div className="col-lg-9 text-center">
+      <h2 className="fw-bold mb-4">OUR OATH</h2>
+      <p className="mb-4">
+        We promise: no hollow storytelling. No stereotypes. No content for content’s sake. 
+        No filters that blur the truth.
+      </p>
+      <p className="mb-4">
+        Every story we tell must leave the person with more dignity than they came in with. 
+        If we can’t offer that — we don’t deserve to tell their story.
+      </p>
+      <p className="mb-4">
+        Before anything is published, we ask:
+      </p>
+      <ul className="list-unstyled" style={{ color: '#1f3f6e',  fontWeight: 900, // Force boldness beyond fw-bold
+    fontFamily: "'Libre Baskerville', serif" }}>
+        <li>• Is it true to our mission?</li>
+        <li>• Does it serve the person, not exploit them?</li>
+        <li>• Does it deepen the movement, not just chase reach?</li>
+        <li>• Would they feel proud of how they’re represented?</li>
+      </ul>
+      <p className="fw-bold text-uppercase mt-4" style={{ letterSpacing: '0.5px' }}>
+        IF THE ANSWER IS NO — WE DON’T BUILD IT. SIMPLE.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
       {/* Contact Section */}
       <section className="bg-light text-center py-5">
         <div className="container">

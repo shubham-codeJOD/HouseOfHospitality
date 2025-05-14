@@ -28,7 +28,8 @@ export default function Header() {
               // { to: '/mission', label: 'Mission' },
               // { to: '/problem', label: 'Problem' },
               { to: '/stories', label: 'Stories' },
-              { to: '/testimonials', label: 'Testimonials' },
+              { to: '/gallery', label: 'Gallery' },
+              // { to: '/testimonials', label: 'Testimonials' },
               { to: '/contact', label: 'Contact' },
             ].map(({ to, label }) => (
               <li className="nav-item" key={to}>
