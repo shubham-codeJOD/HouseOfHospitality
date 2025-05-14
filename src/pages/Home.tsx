@@ -113,7 +113,7 @@ export default function Home() {
         If we can’t offer that — we don’t deserve to tell their story.
       </p>
       <p className="mb-4">
-        Before anything is published, we ask:
+        Before we publish anything at Humans of Hospitality, we ask ourselves:
       </p>
       <ul className="list-unstyled" style={{ color: '#1f3f6e',  fontWeight: 900, // Force boldness beyond fw-bold
     fontFamily: "'Libre Baskerville', serif" }}>
