@@ -42,7 +42,7 @@ export default function Home() {
         imageUrl="https://content.app-sources.com/s/810084476556330001/uploads/Images/2_3-7351171.jpg" // Replace with actual image URL
         title="The Journey of John Doe"
         content="Discover how John Doe made a difference in the hospitality industry with his dedication and passion."
-        link="/stories/john-doe" // Link to the full story
+        link="/stories/neha-the-smile-that-greets-you-at-6-am" // Link to the full story
       />
 
       {/* Stories Section */}
@@ -137,8 +137,10 @@ export default function Home() {
       {/* Contact Section */}
       <section className="bg-light text-center py-5">
         <div className="container">
-          <h2 className="display-4 mb-4">Join Us In Celebrating Hospitality Workers</h2>
-          <p className="lead mb-4">Your story matters to us. Share your journey today!</p>
+          <h2 className="display-4 mb-4">Be a Part of the Movement</h2>
+        <p style={{ color: "#1f3f6e" }}>
+          This is your story as much as ours. Want to share it? Collaborate with us? Or simply join a platform that respects the heart of hospitality? Let’s build it together.
+        </p>
           <ContactForm />
         </div>
       </section>
